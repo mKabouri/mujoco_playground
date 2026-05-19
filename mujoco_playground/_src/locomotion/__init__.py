@@ -41,6 +41,8 @@ from mujoco_playground._src.locomotion.spot import joystick_gait_tracking as spo
 from mujoco_playground._src.locomotion.t1 import joystick as t1_joystick
 from mujoco_playground._src.locomotion.t1 import randomize as t1_randomize
 
+from mujoco_playground._src.locomotion.go2 import go2_env
+
 
 _envs = {
     "ApolloJoystickFlatTerrain": functools.partial(
@@ -84,6 +86,8 @@ _envs = {
     "T1JoystickRoughTerrain": functools.partial(
         t1_joystick.Joystick, task="rough_terrain"
     ),
+    "Go2Walk": go2_env.UnitreeGo2Env,
+    "Go2Gallop": go2_env.UnitreeGo2Env,
 }
 
 _cfgs = {
@@ -110,6 +114,8 @@ _cfgs = {
     "SpotJoystickGaitTracking": spot_joystick_gait_tracking.default_config,
     "T1JoystickFlatTerrain": t1_joystick.default_config,
     "T1JoystickRoughTerrain": t1_joystick.default_config,
+    "Go2Walk": go2_env.default_config,
+    "Go2Gallop": go2_env.gallop_default_config,
 }
 
 _randomizer = {
